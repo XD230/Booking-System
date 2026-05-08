@@ -1,4 +1,7 @@
-﻿Public Class LoginForm
+﻿Imports Microsoft.Data.SqlClient
+Imports System.Configuration
+
+Public Class LoginForm
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -14,9 +17,12 @@
         Dim username As String
         Dim password As String
         Dim userRole As String
+        Dim fullName As String = ""
+        Dim userID As Integer = 0
 
         username = txtUsername.Text.Trim()
         password = txtPassword.Text.Trim()
+
 
         If username = "" Or password = "" Then
 
@@ -27,7 +33,7 @@
         End If
 
 
-        userRole = GetUserRole(username, password)
+        userRole = GetUserRole(username, password, fullName, userID)
 
 
         If userRole = "" Then
@@ -36,10 +42,15 @@
 
         ElseIf userRole = "Customer" Then
 
+            CustomerForm.CustomerID = userID
+            CustomerForm.CustomerName = fullName
+
             CustomerForm.Show()
             Me.Hide()
 
         ElseIf userRole = "Manager" Then
+
+            ManagerForm.ManagerName = fullName
 
             ManagerForm.Show()
             Me.Hide()
@@ -53,24 +64,51 @@
     End Sub
 
 
-    Private Function GetUserRole(username As String, password As String) As String
+    Private Function GetUserRole(username As String, password As String, ByRef fullName As String, ByRef userID As Integer) As String
+
+        Dim role As String
+        Dim connectionString As String
+
+        role = ""
+        fullName = ""
+        userID = 0
+
+        connectionString = ConfigurationManager.ConnectionStrings("BookingDB").ConnectionString
 
 
-        ' ادريس هذا مؤقت بيكون
+        Using con As New SqlConnection(connectionString)
 
-        If username = "customer" And password = "123" Then
+            Dim query As String
 
-            Return "Customer"
+            query = "SELECT UserID, FullName, Role FROM Users WHERE Username = @Username AND Password = @Password"
 
-        ElseIf username = "manager" And password = "123" Then
 
-            Return "Manager"
+            Using cmd As New SqlCommand(query, con)
 
-        Else
+                cmd.Parameters.AddWithValue("@Username", username)
+                cmd.Parameters.AddWithValue("@Password", password)
 
-            Return ""
+                con.Open()
 
-        End If
+
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+
+                    If reader.Read() Then
+
+                        userID = Convert.ToInt32(reader("UserID"))
+                        fullName = reader("FullName").ToString()
+                        role = reader("Role").ToString()
+
+                    End If
+
+                End Using
+
+            End Using
+
+        End Using
+
+
+        Return role
 
     End Function
 

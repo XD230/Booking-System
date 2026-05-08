@@ -27,8 +27,8 @@ Partial Class RegisterForm
         PictureBox1 = New PictureBox()
         Label3 = New Label()
         Label1 = New Label()
-        txtFullName = New TextBox()
         txtUsername = New TextBox()
+        txtFullName = New TextBox()
         Label2 = New Label()
         Username = New Label()
         btnBack = New Button()
@@ -85,26 +85,26 @@ Partial Class RegisterForm
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.MidnightBlue
+        Label1.ForeColor = Color.Navy
         Label1.Location = New Point(322, 30)
         Label1.Name = "Label1"
         Label1.Size = New Size(359, 60)
         Label1.TabIndex = 18
         Label1.Text = "Booking System"
         ' 
-        ' txtFullName
-        ' 
-        txtFullName.Location = New Point(244, 301)
-        txtFullName.Name = "txtFullName"
-        txtFullName.Size = New Size(292, 27)
-        txtFullName.TabIndex = 17
-        ' 
         ' txtUsername
         ' 
-        txtUsername.Location = New Point(244, 258)
+        txtUsername.Location = New Point(244, 301)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(292, 27)
-        txtUsername.TabIndex = 16
+        txtUsername.TabIndex = 17
+        ' 
+        ' txtFullName
+        ' 
+        txtFullName.Location = New Point(244, 258)
+        txtFullName.Name = "txtFullName"
+        txtFullName.Size = New Size(292, 27)
+        txtFullName.TabIndex = 16
         ' 
         ' Label2
         ' 
@@ -221,8 +221,8 @@ Partial Class RegisterForm
         Controls.Add(PictureBox1)
         Controls.Add(Label3)
         Controls.Add(Label1)
-        Controls.Add(txtFullName)
         Controls.Add(txtUsername)
+        Controls.Add(txtFullName)
         Controls.Add(Label2)
         Controls.Add(Username)
         Controls.Add(btnBack)
@@ -238,8 +238,8 @@ Partial Class RegisterForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtFullName As TextBox
     Friend WithEvents txtUsername As TextBox
+    Friend WithEvents txtFullName As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Username As Label
     Friend WithEvents btnBack As Button

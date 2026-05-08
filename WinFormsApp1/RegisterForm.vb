@@ -1,4 +1,7 @@
-﻿Public Class RegisterForm
+﻿Imports Microsoft.Data.SqlClient
+Imports System.Configuration
+
+Public Class RegisterForm
 
     Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -24,8 +27,8 @@
         Dim confirmPassword As String
         Dim role As String
 
-        fullName = txtFullName.Text.Trim()
-        username = txtUsername.Text.Trim()
+        fullName = txtUsername.Text.Trim()
+        username = txtFullName.Text.Trim()
         password = txtPassword.Text.Trim()
         confirmPassword = txtConfirmPassword.Text.Trim()
         role = cmbRole.Text.Trim()
@@ -60,8 +63,6 @@
 
         SaveUser(fullName, username, password, role)
 
-        lblMessage.Text = "Account created successfully."
-
         MessageBox.Show("Account created successfully. You can now login.", "Success")
 
         LoginForm.Show()
@@ -72,10 +73,31 @@
 
     Private Function IsUsernameTaken(username As String) As Boolean
 
-        ' Temporary check
-        ' Later this function will check the database
+        Dim connectionString As String
+        Dim count As Integer
 
-        If username = "customer" Or username = "manager" Then
+        connectionString = ConfigurationManager.ConnectionStrings("BookingDB").ConnectionString
+
+        Using con As New SqlConnection(connectionString)
+
+            Dim query As String
+
+            query = "SELECT COUNT(*) FROM Users WHERE Username = @Username"
+
+            Using cmd As New SqlCommand(query, con)
+
+                cmd.Parameters.AddWithValue("@Username", username)
+
+                con.Open()
+
+                count = Convert.ToInt32(cmd.ExecuteScalar())
+
+            End Using
+
+        End Using
+
+
+        If count > 0 Then
 
             Return True
 
@@ -90,12 +112,30 @@
 
     Private Sub SaveUser(fullName As String, username As String, password As String, role As String)
 
-        ' Temporary save
-        ' Later this part will insert the user into the database
+        Dim connectionString As String
 
-        ' Example later:
-        ' INSERT INTO Users (FullName, Username, Password, Role)
-        ' VALUES (@FullName, @Username, @Password, @Role)
+        connectionString = ConfigurationManager.ConnectionStrings("BookingDB").ConnectionString
+
+        Using con As New SqlConnection(connectionString)
+
+            Dim query As String
+
+            query = "INSERT INTO Users (FullName, Username, Password, Role) VALUES (@FullName, @Username, @Password, @Role)"
+
+            Using cmd As New SqlCommand(query, con)
+
+                cmd.Parameters.AddWithValue("@FullName", fullName)
+                cmd.Parameters.AddWithValue("@Username", username)
+                cmd.Parameters.AddWithValue("@Password", password)
+                cmd.Parameters.AddWithValue("@Role", role)
+
+                con.Open()
+
+                cmd.ExecuteNonQuery()
+
+            End Using
+
+        End Using
 
     End Sub
 

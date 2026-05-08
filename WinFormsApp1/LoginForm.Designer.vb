@@ -95,7 +95,7 @@ Partial Class LoginForm
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.MidnightBlue
+        Label1.ForeColor = Color.Navy
         Label1.Location = New Point(335, 22)
         Label1.Name = "Label1"
         Label1.Size = New Size(359, 60)
@@ -118,7 +118,7 @@ Partial Class LoginForm
         PictureBox1.Image = My.Resources.Resources.Screenshot_2026_05_06_2223293
         PictureBox1.Location = New Point(57, 12)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(236, 194)
+        PictureBox1.Size = New Size(272, 216)
         PictureBox1.TabIndex = 9
         PictureBox1.TabStop = False
         ' 

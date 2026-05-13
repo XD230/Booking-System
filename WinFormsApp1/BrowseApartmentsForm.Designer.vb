@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class BrowseApartmentsForm
     Inherits System.Windows.Forms.Form
 
@@ -18,445 +18,649 @@ Partial Class BrowseApartmentsForm
     Private components As System.ComponentModel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
+    'It can be modified using the Windows Form Designer.
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        PictureBox1 = New PictureBox()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        pnlCard = New RoundedPanel()
+        btnBack = New RoundedButton()
+        btnBook = New RoundedButton()
+        lblTotalValue = New Label()
+        lblTotalLabel = New Label()
+        lblRightDivider = New Label()
+        pnlNights = New RoundedPanel()
+        numNights = New NumericUpDown()
+        Label15 = New Label()
+        pnlCheckIn = New RoundedPanel()
+        dtpCheckIn = New DateTimePicker()
+        Label14 = New Label()
+        pnlDescription = New RoundedPanel()
+        txtDescription = New TextBox()
+        Label10 = New Label()
+        lblPriceValue = New Label()
+        lblLocationValue = New Label()
+        lblApartmentNumberValue = New Label()
+        lblHotelValue = New Label()
+        Label9 = New Label()
+        Label8 = New Label()
+        Label7 = New Label()
+        Label6 = New Label()
+        picThumb3 = New CoverPictureBox()
+        picThumb2 = New CoverPictureBox()
+        picThumb1 = New CoverPictureBox()
+        picApartmentMain = New CoverPictureBox()
+        Label5 = New Label()
+        dgvApartments = New DataGridView()
+        Label4 = New Label()
+        btnClearSearch = New RoundedButton()
+        btnSearch = New RoundedButton()
+        pnlSearch = New RoundedPanel()
+        txtSearch = New TextBox()
+        Label3 = New Label()
+        lblHeaderDivider = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Label3 = New Label()
-        txtSearch = New TextBox()
-        btnSearch = New Button()
-        btnClearSearch = New Button()
-        Label4 = New Label()
-        dgvApartments = New DataGridView()
-        Label5 = New Label()
-        picApartmentMain = New PictureBox()
-        picThumb1 = New PictureBox()
-        picThumb2 = New PictureBox()
-        picThumb3 = New PictureBox()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
-        Label10 = New Label()
-        txtDescription = New TextBox()
-        lblHotelValue = New Label()
-        lblLocationValue = New Label()
-        lblPriceValue = New Label()
-        lblApartmentNumberValue = New Label()
-        Label11 = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
-        Label14 = New Label()
-        dtpCheckIn = New DateTimePicker()
-        Label15 = New Label()
-        numNights = New NumericUpDown()
-        btnBook = New Button()
-        btnBack = New Button()
-        lblMessage = New Label()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(dgvApartments, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picApartmentMain, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picThumb1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picThumb2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picThumb3, ComponentModel.ISupportInitialize).BeginInit()
+        PictureBox1 = New PictureBox()
+        pnlCard.SuspendLayout()
+        pnlNights.SuspendLayout()
         CType(numNights, ComponentModel.ISupportInitialize).BeginInit()
+        pnlCheckIn.SuspendLayout()
+        pnlDescription.SuspendLayout()
+        CType(picThumb3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(picThumb2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(picThumb1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(picApartmentMain, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvApartments, ComponentModel.ISupportInitialize).BeginInit()
+        pnlSearch.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' PictureBox1
+        ' pnlCard
         ' 
-        PictureBox1.Location = New Point(12, 12)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(139, 101)
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
+        pnlCard.BackColor = Color.White
+        pnlCard.Controls.Add(btnBack)
+        pnlCard.Controls.Add(btnBook)
+        pnlCard.Controls.Add(lblTotalValue)
+        pnlCard.Controls.Add(lblTotalLabel)
+        pnlCard.Controls.Add(lblRightDivider)
+        pnlCard.Controls.Add(pnlNights)
+        pnlCard.Controls.Add(Label15)
+        pnlCard.Controls.Add(pnlCheckIn)
+        pnlCard.Controls.Add(Label14)
+        pnlCard.Controls.Add(pnlDescription)
+        pnlCard.Controls.Add(Label10)
+        pnlCard.Controls.Add(lblPriceValue)
+        pnlCard.Controls.Add(lblLocationValue)
+        pnlCard.Controls.Add(lblApartmentNumberValue)
+        pnlCard.Controls.Add(lblHotelValue)
+        pnlCard.Controls.Add(Label9)
+        pnlCard.Controls.Add(Label8)
+        pnlCard.Controls.Add(Label7)
+        pnlCard.Controls.Add(Label6)
+        pnlCard.Controls.Add(picThumb3)
+        pnlCard.Controls.Add(picThumb2)
+        pnlCard.Controls.Add(picThumb1)
+        pnlCard.Controls.Add(picApartmentMain)
+        pnlCard.Controls.Add(Label5)
+        pnlCard.Controls.Add(dgvApartments)
+        pnlCard.Controls.Add(Label4)
+        pnlCard.Controls.Add(btnClearSearch)
+        pnlCard.Controls.Add(btnSearch)
+        pnlCard.Controls.Add(pnlSearch)
+        pnlCard.Controls.Add(Label3)
+        pnlCard.Controls.Add(lblHeaderDivider)
+        pnlCard.Controls.Add(Label2)
+        pnlCard.Controls.Add(Label1)
+        pnlCard.Controls.Add(PictureBox1)
+        pnlCard.CornerRadius = 0
+        pnlCard.Location = New Point(20, 19)
+        pnlCard.Name = "pnlCard"
+        pnlCard.Size = New Size(1380, 1026)
+        pnlCard.TabIndex = 0
         ' 
-        ' Label2
+        ' btnBack
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = SystemColors.WindowFrame
-        Label2.Location = New Point(199, 90)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(168, 23)
-        Label2.TabIndex = 6
-        Label2.Text = "Browse Apartments"
+        btnBack.BackColor = Color.FromArgb(CByte(240), CByte(242), CByte(246))
+        btnBack.CornerRadius = 0
+        btnBack.FlatAppearance.BorderSize = 0
+        btnBack.FlatStyle = FlatStyle.Flat
+        btnBack.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
+        btnBack.ForeColor = Color.FromArgb(CByte(60), CByte(70), CByte(90))
+        btnBack.Location = New Point(975, 841)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(360, 52)
+        btnBack.TabIndex = 33
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = False
         ' 
-        ' Label1
+        ' btnBook
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.Navy
-        Label1.Location = New Point(199, 19)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(244, 41)
-        Label1.TabIndex = 5
-        Label1.Text = "Booking System"
+        btnBook.BackColor = Color.FromArgb(CByte(37), CByte(99), CByte(235))
+        btnBook.CornerRadius = 0
+        btnBook.FlatAppearance.BorderSize = 0
+        btnBook.FlatStyle = FlatStyle.Flat
+        btnBook.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
+        btnBook.ForeColor = Color.White
+        btnBook.Location = New Point(975, 774)
+        btnBook.Name = "btnBook"
+        btnBook.Size = New Size(360, 57)
+        btnBook.TabIndex = 32
+        btnBook.Text = "Book Apartment"
+        btnBook.UseVisualStyleBackColor = False
         ' 
-        ' Label3
+        ' lblTotalValue
         ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(25, 151)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(176, 20)
-        Label3.TabIndex = 7
-        Label3.Text = "Search Hotel or Location:"
+        lblTotalValue.AutoSize = True
+        lblTotalValue.BackColor = Color.Transparent
+        lblTotalValue.Font = New Font("Segoe UI", 22F, FontStyle.Bold)
+        lblTotalValue.ForeColor = Color.FromArgb(CByte(37), CByte(99), CByte(235))
+        lblTotalValue.Location = New Point(1140, 712)
+        lblTotalValue.Name = "lblTotalValue"
+        lblTotalValue.Size = New Size(89, 46)
+        lblTotalValue.TabIndex = 31
+        lblTotalValue.Text = "0.00"
         ' 
-        ' txtSearch
+        ' lblTotalLabel
         ' 
-        txtSearch.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtSearch.ForeColor = SystemColors.WindowFrame
-        txtSearch.Location = New Point(223, 151)
-        txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(482, 27)
-        txtSearch.TabIndex = 8
-        txtSearch.Text = "Enter Name or Location .."
+        lblTotalLabel.AutoSize = True
+        lblTotalLabel.BackColor = Color.Transparent
+        lblTotalLabel.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
+        lblTotalLabel.ForeColor = Color.FromArgb(CByte(15), CByte(34), CByte(80))
+        lblTotalLabel.Location = New Point(975, 722)
+        lblTotalLabel.Name = "lblTotalLabel"
+        lblTotalLabel.Size = New Size(145, 35)
+        lblTotalLabel.TabIndex = 30
+        lblTotalLabel.Text = "Total Price:"
         ' 
-        ' btnSearch
+        ' lblRightDivider
         ' 
-        btnSearch.Location = New Point(732, 152)
-        btnSearch.Name = "btnSearch"
-        btnSearch.Size = New Size(157, 26)
-        btnSearch.TabIndex = 9
-        btnSearch.Text = "Search"
-        btnSearch.UseVisualStyleBackColor = True
+        lblRightDivider.BackColor = Color.FromArgb(CByte(228), CByte(232), CByte(240))
+        lblRightDivider.Location = New Point(975, 703)
+        lblRightDivider.Name = "lblRightDivider"
+        lblRightDivider.Size = New Size(360, 1)
+        lblRightDivider.TabIndex = 29
         ' 
-        ' btnClearSearch
+        ' pnlNights
         ' 
-        btnClearSearch.Location = New Point(903, 151)
-        btnClearSearch.Name = "btnClearSearch"
-        btnClearSearch.Size = New Size(157, 26)
-        btnClearSearch.TabIndex = 10
-        btnClearSearch.Text = "Clear Search"
-        btnClearSearch.UseVisualStyleBackColor = True
+        pnlNights.BackColor = Color.White
+        pnlNights.Controls.Add(numNights)
+        pnlNights.CornerRadius = 0
+        pnlNights.Location = New Point(1240, 646)
+        pnlNights.Name = "pnlNights"
+        pnlNights.Size = New Size(95, 40)
+        pnlNights.TabIndex = 28
         ' 
-        ' Label4
+        ' numNights
         ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        Label4.Location = New Point(25, 205)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(197, 25)
-        Label4.TabIndex = 11
-        Label4.Text = "Available Apartments" & vbLf
+        numNights.BorderStyle = BorderStyle.None
+        numNights.Font = New Font("Segoe UI", 11F)
+        numNights.Location = New Point(12, 10)
+        numNights.Maximum = New Decimal(New Integer() {30, 0, 0, 0})
+        numNights.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        numNights.Name = "numNights"
+        numNights.Size = New Size(70, 26)
+        numNights.TabIndex = 0
+        numNights.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        ' 
+        ' Label15
+        ' 
+        Label15.AutoSize = True
+        Label15.BackColor = Color.Transparent
+        Label15.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label15.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label15.Location = New Point(975, 651)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(161, 23)
+        Label15.TabIndex = 27
+        Label15.Text = "Number of Nights:"
+        ' 
+        ' pnlCheckIn
+        ' 
+        pnlCheckIn.BackColor = Color.White
+        pnlCheckIn.Controls.Add(dtpCheckIn)
+        pnlCheckIn.CornerRadius = 0
+        pnlCheckIn.Location = New Point(975, 594)
+        pnlCheckIn.Name = "pnlCheckIn"
+        pnlCheckIn.Size = New Size(360, 40)
+        pnlCheckIn.TabIndex = 26
+        ' 
+        ' dtpCheckIn
+        ' 
+        dtpCheckIn.CalendarFont = New Font("Segoe UI", 11F)
+        dtpCheckIn.Font = New Font("Segoe UI", 11F)
+        dtpCheckIn.Format = DateTimePickerFormat.Short
+        dtpCheckIn.Location = New Point(12, 5)
+        dtpCheckIn.Name = "dtpCheckIn"
+        dtpCheckIn.Size = New Size(336, 30)
+        dtpCheckIn.TabIndex = 0
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.BackColor = Color.Transparent
+        Label14.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label14.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label14.Location = New Point(975, 570)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(127, 23)
+        Label14.TabIndex = 25
+        Label14.Text = "Check-in Date:"
+        ' 
+        ' pnlDescription
+        ' 
+        pnlDescription.BackColor = Color.White
+        pnlDescription.BorderThickness = 0
+        pnlDescription.Controls.Add(txtDescription)
+        pnlDescription.CornerRadius = 0
+        pnlDescription.Location = New Point(500, 760)
+        pnlDescription.Name = "pnlDescription"
+        pnlDescription.Size = New Size(420, 128)
+        pnlDescription.TabIndex = 24
+        ' 
+        ' txtDescription
+        ' 
+        txtDescription.BackColor = Color.White
+        txtDescription.BorderStyle = BorderStyle.None
+        txtDescription.Font = New Font("Segoe UI", 11F)
+        txtDescription.Location = New Point(0, 0)
+        txtDescription.Multiline = True
+        txtDescription.Name = "txtDescription"
+        txtDescription.ReadOnly = True
+        txtDescription.Size = New Size(420, 128)
+        txtDescription.TabIndex = 0
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.BackColor = Color.Transparent
+        Label10.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label10.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label10.Location = New Point(500, 732)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(107, 23)
+        Label10.TabIndex = 19
+        Label10.Text = "Description:"
+        ' 
+        ' lblPriceValue
+        ' 
+        lblPriceValue.AutoSize = True
+        lblPriceValue.BackColor = Color.Transparent
+        lblPriceValue.Font = New Font("Segoe UI", 11F)
+        lblPriceValue.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        lblPriceValue.Location = New Point(680, 684)
+        lblPriceValue.Name = "lblPriceValue"
+        lblPriceValue.Size = New Size(17, 23)
+        lblPriceValue.TabIndex = 23
+        lblPriceValue.Text = "-"
+        ' 
+        ' lblLocationValue
+        ' 
+        lblLocationValue.AutoSize = True
+        lblLocationValue.BackColor = Color.Transparent
+        lblLocationValue.Font = New Font("Segoe UI", 11F)
+        lblLocationValue.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        lblLocationValue.Location = New Point(680, 646)
+        lblLocationValue.Name = "lblLocationValue"
+        lblLocationValue.Size = New Size(17, 23)
+        lblLocationValue.TabIndex = 22
+        lblLocationValue.Text = "-"
+        ' 
+        ' lblApartmentNumberValue
+        ' 
+        lblApartmentNumberValue.AutoSize = True
+        lblApartmentNumberValue.BackColor = Color.Transparent
+        lblApartmentNumberValue.Font = New Font("Segoe UI", 11F)
+        lblApartmentNumberValue.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        lblApartmentNumberValue.Location = New Point(680, 608)
+        lblApartmentNumberValue.Name = "lblApartmentNumberValue"
+        lblApartmentNumberValue.Size = New Size(17, 23)
+        lblApartmentNumberValue.TabIndex = 21
+        lblApartmentNumberValue.Text = "-"
+        ' 
+        ' lblHotelValue
+        ' 
+        lblHotelValue.AutoSize = True
+        lblHotelValue.BackColor = Color.Transparent
+        lblHotelValue.Font = New Font("Segoe UI", 11F)
+        lblHotelValue.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        lblHotelValue.Location = New Point(680, 570)
+        lblHotelValue.Name = "lblHotelValue"
+        lblHotelValue.Size = New Size(17, 23)
+        lblHotelValue.TabIndex = 20
+        lblHotelValue.Text = "-"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.BackColor = Color.Transparent
+        Label9.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label9.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label9.Location = New Point(500, 684)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(137, 23)
+        Label9.TabIndex = 18
+        Label9.Text = "Price per Night:"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.BackColor = Color.Transparent
+        Label8.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label8.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label8.Location = New Point(500, 646)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(83, 23)
+        Label8.TabIndex = 17
+        Label8.Text = "Location:"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
+        Label7.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label7.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label7.Location = New Point(500, 608)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(175, 23)
+        Label7.TabIndex = 16
+        Label7.Text = "Apartment Number:"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
+        Label6.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label6.Location = New Point(500, 570)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(111, 23)
+        Label6.TabIndex = 15
+        Label6.Text = "Hotel Name:"
+        ' 
+        ' picThumb3
+        ' 
+        picThumb3.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(251))
+        picThumb3.BorderStyle = BorderStyle.FixedSingle
+        picThumb3.Location = New Point(330, 793)
+        picThumb3.Name = "picThumb3"
+        picThumb3.Size = New Size(130, 95)
+        picThumb3.SizeMode = PictureBoxSizeMode.StretchImage
+        picThumb3.TabIndex = 14
+        picThumb3.TabStop = False
+        ' 
+        ' picThumb2
+        ' 
+        picThumb2.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(251))
+        picThumb2.BorderStyle = BorderStyle.FixedSingle
+        picThumb2.Location = New Point(185, 793)
+        picThumb2.Name = "picThumb2"
+        picThumb2.Size = New Size(130, 95)
+        picThumb2.SizeMode = PictureBoxSizeMode.StretchImage
+        picThumb2.TabIndex = 13
+        picThumb2.TabStop = False
+        ' 
+        ' picThumb1
+        ' 
+        picThumb1.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(251))
+        picThumb1.BorderStyle = BorderStyle.FixedSingle
+        picThumb1.Location = New Point(40, 793)
+        picThumb1.Name = "picThumb1"
+        picThumb1.Size = New Size(130, 95)
+        picThumb1.SizeMode = PictureBoxSizeMode.StretchImage
+        picThumb1.TabIndex = 12
+        picThumb1.TabStop = False
+        ' 
+        ' picApartmentMain
+        ' 
+        picApartmentMain.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(251))
+        picApartmentMain.BorderStyle = BorderStyle.FixedSingle
+        picApartmentMain.Location = New Point(40, 560)
+        picApartmentMain.Name = "picApartmentMain"
+        picApartmentMain.Size = New Size(420, 219)
+        picApartmentMain.SizeMode = PictureBoxSizeMode.StretchImage
+        picApartmentMain.TabIndex = 11
+        picApartmentMain.TabStop = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        Label5.ForeColor = Color.FromArgb(CByte(15), CByte(34), CByte(80))
+        Label5.Location = New Point(40, 527)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(204, 30)
+        Label5.TabIndex = 10
+        Label5.Text = "Apartment Details"
         ' 
         ' dgvApartments
         ' 
         dgvApartments.AllowUserToAddRows = False
         dgvApartments.AllowUserToDeleteRows = False
+        dgvApartments.AllowUserToResizeRows = False
         dgvApartments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvApartments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvApartments.Location = New Point(21, 240)
+        dgvApartments.BackgroundColor = Color.White
+        dgvApartments.BorderStyle = BorderStyle.None
+        dgvApartments.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvApartments.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(252))
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 10F)
+        DataGridViewCellStyle3.ForeColor = Color.FromArgb(CByte(60), CByte(70), CByte(90))
+        DataGridViewCellStyle3.Padding = New Padding(10, 0, 0, 0)
+        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(248), CByte(249), CByte(252))
+        DataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(CByte(60), CByte(70), CByte(90))
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
+        dgvApartments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        dgvApartments.ColumnHeadersHeight = 46
+        dgvApartments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = Color.White
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 10F)
+        DataGridViewCellStyle4.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        DataGridViewCellStyle4.Padding = New Padding(10, 0, 0, 0)
+        DataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(CByte(37), CByte(99), CByte(235))
+        DataGridViewCellStyle4.SelectionForeColor = Color.White
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        dgvApartments.DefaultCellStyle = DataGridViewCellStyle4
+        dgvApartments.EnableHeadersVisualStyles = False
+        dgvApartments.GridColor = Color.FromArgb(CByte(228), CByte(232), CByte(240))
+        dgvApartments.Location = New Point(40, 285)
+        dgvApartments.MultiSelect = False
         dgvApartments.Name = "dgvApartments"
         dgvApartments.ReadOnly = True
-        dgvApartments.RowHeadersWidth = 51
+        dgvApartments.RowHeadersVisible = False
+        dgvApartments.RowHeadersWidth = 47
+        dgvApartments.RowTemplate.Height = 48
         dgvApartments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvApartments.Size = New Size(1135, 226)
-        dgvApartments.TabIndex = 12
+        dgvApartments.Size = New Size(1300, 218)
+        dgvApartments.TabIndex = 9
         ' 
-        ' Label5
+        ' Label4
         ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        Label5.Location = New Point(25, 471)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(176, 25)
-        Label5.TabIndex = 13
-        Label5.Text = "Apartments Details"
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        Label4.ForeColor = Color.FromArgb(CByte(15), CByte(34), CByte(80))
+        Label4.Location = New Point(40, 252)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(238, 30)
+        Label4.TabIndex = 8
+        Label4.Text = "Available Apartments"
         ' 
-        ' picApartmentMain
+        ' btnClearSearch
         ' 
-        picApartmentMain.Location = New Point(35, 503)
-        picApartmentMain.Name = "picApartmentMain"
-        picApartmentMain.Size = New Size(388, 131)
-        picApartmentMain.TabIndex = 14
-        picApartmentMain.TabStop = False
+        btnClearSearch.BackColor = Color.FromArgb(CByte(240), CByte(242), CByte(246))
+        btnClearSearch.CornerRadius = 0
+        btnClearSearch.FlatAppearance.BorderSize = 0
+        btnClearSearch.FlatStyle = FlatStyle.Flat
+        btnClearSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        btnClearSearch.ForeColor = Color.FromArgb(CByte(60), CByte(70), CByte(90))
+        btnClearSearch.Location = New Point(1100, 180)
+        btnClearSearch.Name = "btnClearSearch"
+        btnClearSearch.Size = New Size(180, 44)
+        btnClearSearch.TabIndex = 7
+        btnClearSearch.Text = "Clear"
+        btnClearSearch.UseVisualStyleBackColor = False
         ' 
-        ' picThumb1
+        ' btnSearch
         ' 
-        picThumb1.Location = New Point(36, 647)
-        picThumb1.Name = "picThumb1"
-        picThumb1.Size = New Size(109, 91)
-        picThumb1.TabIndex = 15
-        picThumb1.TabStop = False
+        btnSearch.BackColor = Color.FromArgb(CByte(37), CByte(99), CByte(235))
+        btnSearch.CornerRadius = 0
+        btnSearch.FlatAppearance.BorderSize = 0
+        btnSearch.FlatStyle = FlatStyle.Flat
+        btnSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        btnSearch.ForeColor = Color.White
+        btnSearch.Location = New Point(905, 180)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(180, 44)
+        btnSearch.TabIndex = 6
+        btnSearch.Text = "Search"
+        btnSearch.UseVisualStyleBackColor = False
         ' 
-        ' picThumb2
+        ' pnlSearch
         ' 
-        picThumb2.Location = New Point(176, 647)
-        picThumb2.Name = "picThumb2"
-        picThumb2.Size = New Size(109, 91)
-        picThumb2.TabIndex = 16
-        picThumb2.TabStop = False
+        pnlSearch.BackColor = Color.White
+        pnlSearch.Controls.Add(txtSearch)
+        pnlSearch.CornerRadius = 0
+        pnlSearch.Location = New Point(283, 182)
+        pnlSearch.Name = "pnlSearch"
+        pnlSearch.Size = New Size(602, 40)
+        pnlSearch.TabIndex = 5
         ' 
-        ' picThumb3
+        ' txtSearch
         ' 
-        picThumb3.Location = New Point(314, 647)
-        picThumb3.Name = "picThumb3"
-        picThumb3.Size = New Size(109, 91)
-        picThumb3.TabIndex = 17
-        picThumb3.TabStop = False
+        txtSearch.BackColor = Color.White
+        txtSearch.BorderStyle = BorderStyle.None
+        txtSearch.Font = New Font("Segoe UI", 11F)
+        txtSearch.Location = New Point(14, 10)
+        txtSearch.Name = "txtSearch"
+        txtSearch.PlaceholderText = "Enter hotel name or location..."
+        txtSearch.Size = New Size(612, 23)
+        txtSearch.TabIndex = 0
         ' 
-        ' Label6
+        ' Label3
         ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(453, 509)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(93, 20)
-        Label6.TabIndex = 18
-        Label6.Text = "Hotel Name:"
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label3.ForeColor = Color.FromArgb(CByte(40), CByte(50), CByte(70))
+        Label3.Location = New Point(40, 190)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(237, 25)
+        Label3.TabIndex = 4
+        Label3.Text = "Search Hotel or Location:"
         ' 
-        ' Label7
+        ' lblHeaderDivider
         ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(453, 546)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(141, 20)
-        Label7.TabIndex = 19
-        Label7.Text = "Apartment Number:"
+        lblHeaderDivider.BackColor = Color.FromArgb(CByte(228), CByte(232), CByte(240))
+        lblHeaderDivider.Location = New Point(40, 162)
+        lblHeaderDivider.Name = "lblHeaderDivider"
+        lblHeaderDivider.Size = New Size(1300, 1)
+        lblHeaderDivider.TabIndex = 3
         ' 
-        ' Label8
+        ' Label2
         ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(453, 583)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(69, 20)
-        Label8.TabIndex = 20
-        Label8.Text = "Location:"
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.FromArgb(CByte(110), CByte(120), CByte(140))
+        Label2.Location = New Point(205, 95)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(202, 30)
+        Label2.TabIndex = 2
+        Label2.Text = "Browse Apartments"
         ' 
-        ' Label9
+        ' Label1
         ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(453, 619)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(111, 20)
-        Label9.TabIndex = 21
-        Label9.Text = "Price per Night:"
+        Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 26F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.FromArgb(CByte(15), CByte(34), CByte(80))
+        Label1.Location = New Point(200, 33)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(326, 54)
+        Label1.TabIndex = 1
+        Label1.Text = "Booking System"
         ' 
-        ' Label10
+        ' PictureBox1
         ' 
-        Label10.AutoSize = True
-        Label10.Location = New Point(453, 652)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(88, 20)
-        Label10.TabIndex = 22
-        Label10.Text = "Description:"
-        ' 
-        ' txtDescription
-        ' 
-        txtDescription.Location = New Point(459, 677)
-        txtDescription.Multiline = True
-        txtDescription.Name = "txtDescription"
-        txtDescription.ReadOnly = True
-        txtDescription.Size = New Size(280, 77)
-        txtDescription.TabIndex = 23
-        ' 
-        ' lblHotelValue
-        ' 
-        lblHotelValue.AutoSize = True
-        lblHotelValue.Location = New Point(609, 509)
-        lblHotelValue.Name = "lblHotelValue"
-        lblHotelValue.Size = New Size(0, 20)
-        lblHotelValue.TabIndex = 24
-        ' 
-        ' lblLocationValue
-        ' 
-        lblLocationValue.AutoSize = True
-        lblLocationValue.Location = New Point(609, 583)
-        lblLocationValue.Name = "lblLocationValue"
-        lblLocationValue.Size = New Size(0, 20)
-        lblLocationValue.TabIndex = 25
-        ' 
-        ' lblPriceValue
-        ' 
-        lblPriceValue.AutoSize = True
-        lblPriceValue.Location = New Point(609, 619)
-        lblPriceValue.Name = "lblPriceValue"
-        lblPriceValue.Size = New Size(0, 20)
-        lblPriceValue.TabIndex = 26
-        ' 
-        ' lblApartmentNumberValue
-        ' 
-        lblApartmentNumberValue.AutoSize = True
-        lblApartmentNumberValue.Location = New Point(609, 546)
-        lblApartmentNumberValue.Name = "lblApartmentNumberValue"
-        lblApartmentNumberValue.Size = New Size(0, 20)
-        lblApartmentNumberValue.TabIndex = 28
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoEllipsis = True
-        Label11.BackColor = SystemColors.GradientInactiveCaption
-        Label11.Location = New Point(21, 471)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(1135, 298)
-        Label11.TabIndex = 29
-        ' 
-        ' Label12
-        ' 
-        Label12.BackColor = SystemColors.ControlDark
-        Label12.Location = New Point(13, 207)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(1150, 574)
-        Label12.TabIndex = 30
-        ' 
-        ' Label13
-        ' 
-        Label13.BackColor = SystemColors.ControlDark
-        Label13.Location = New Point(13, 137)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(1150, 51)
-        Label13.TabIndex = 31
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.Location = New Point(903, 509)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(105, 20)
-        Label14.TabIndex = 32
-        Label14.Text = "Check-in Date:"
-        ' 
-        ' dtpCheckIn
-        ' 
-        dtpCheckIn.Format = DateTimePickerFormat.Short
-        dtpCheckIn.Location = New Point(903, 541)
-        dtpCheckIn.Name = "dtpCheckIn"
-        dtpCheckIn.Size = New Size(204, 27)
-        dtpCheckIn.TabIndex = 33
-        dtpCheckIn.Value = New Date(2026, 5, 8, 21, 24, 31, 0)
-        ' 
-        ' Label15
-        ' 
-        Label15.AutoSize = True
-        Label15.Location = New Point(903, 583)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(131, 20)
-        Label15.TabIndex = 34
-        Label15.Text = "Number of Nights:"
-        ' 
-        ' numNights
-        ' 
-        numNights.Location = New Point(1051, 581)
-        numNights.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        numNights.Name = "numNights"
-        numNights.Size = New Size(86, 27)
-        numNights.TabIndex = 35
-        numNights.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        ' 
-        ' btnBook
-        ' 
-        btnBook.Location = New Point(905, 619)
-        btnBook.Name = "btnBook"
-        btnBook.Size = New Size(202, 45)
-        btnBook.TabIndex = 36
-        btnBook.Text = "Book Apartment"
-        btnBook.UseVisualStyleBackColor = True
-        ' 
-        ' btnBack
-        ' 
-        btnBack.Location = New Point(903, 677)
-        btnBack.Name = "btnBack"
-        btnBack.Size = New Size(202, 45)
-        btnBack.TabIndex = 37
-        btnBack.Text = "Back"
-        btnBack.UseVisualStyleBackColor = True
-        ' 
-        ' lblMessage
-        ' 
-        lblMessage.AutoSize = True
-        lblMessage.Location = New Point(25, 798)
-        lblMessage.Name = "lblMessage"
-        lblMessage.Size = New Size(0, 20)
-        lblMessage.TabIndex = 38
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = My.Resources.Resources.Screenshot_2026_05_06_2223293
+        PictureBox1.Location = New Point(40, 24)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(140, 124)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 0
+        PictureBox1.TabStop = False
         ' 
         ' BrowseApartmentsForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8F, 19F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1182, 838)
-        Controls.Add(lblMessage)
-        Controls.Add(btnBack)
-        Controls.Add(btnBook)
-        Controls.Add(numNights)
-        Controls.Add(Label15)
-        Controls.Add(dtpCheckIn)
-        Controls.Add(Label14)
-        Controls.Add(lblApartmentNumberValue)
-        Controls.Add(lblPriceValue)
-        Controls.Add(lblLocationValue)
-        Controls.Add(lblHotelValue)
-        Controls.Add(txtDescription)
-        Controls.Add(Label10)
-        Controls.Add(Label9)
-        Controls.Add(Label8)
-        Controls.Add(Label7)
-        Controls.Add(Label6)
-        Controls.Add(picThumb3)
-        Controls.Add(picThumb2)
-        Controls.Add(picThumb1)
-        Controls.Add(picApartmentMain)
-        Controls.Add(Label5)
-        Controls.Add(dgvApartments)
-        Controls.Add(Label4)
-        Controls.Add(btnClearSearch)
-        Controls.Add(btnSearch)
-        Controls.Add(txtSearch)
-        Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
-        Controls.Add(PictureBox1)
-        Controls.Add(Label11)
-        Controls.Add(Label12)
-        Controls.Add(Label13)
+        BackColor = Color.FromArgb(CByte(240), CByte(244), CByte(250))
+        ClientSize = New Size(1420, 1083)
+        Controls.Add(pnlCard)
         Name = "BrowseApartmentsForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "BrowseApartmentsForm"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(dgvApartments, ComponentModel.ISupportInitialize).EndInit()
-        CType(picApartmentMain, ComponentModel.ISupportInitialize).EndInit()
-        CType(picThumb1, ComponentModel.ISupportInitialize).EndInit()
-        CType(picThumb2, ComponentModel.ISupportInitialize).EndInit()
-        CType(picThumb3, ComponentModel.ISupportInitialize).EndInit()
+        pnlCard.ResumeLayout(False)
+        pnlCard.PerformLayout()
+        pnlNights.ResumeLayout(False)
         CType(numNights, ComponentModel.ISupportInitialize).EndInit()
+        pnlCheckIn.ResumeLayout(False)
+        pnlDescription.ResumeLayout(False)
+        pnlDescription.PerformLayout()
+        CType(picThumb3, ComponentModel.ISupportInitialize).EndInit()
+        CType(picThumb2, ComponentModel.ISupportInitialize).EndInit()
+        CType(picThumb1, ComponentModel.ISupportInitialize).EndInit()
+        CType(picApartmentMain, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvApartments, ComponentModel.ISupportInitialize).EndInit()
+        pnlSearch.ResumeLayout(False)
+        pnlSearch.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
+    Friend WithEvents pnlCard As RoundedPanel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblHeaderDivider As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents pnlSearch As RoundedPanel
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents btnSearch As Button
-    Friend WithEvents btnClearSearch As Button
+    Friend WithEvents btnSearch As RoundedButton
+    Friend WithEvents btnClearSearch As RoundedButton
     Friend WithEvents Label4 As Label
     Friend WithEvents dgvApartments As DataGridView
     Friend WithEvents Label5 As Label
-    Friend WithEvents picApartmentMain As PictureBox
-    Friend WithEvents picThumb1 As PictureBox
-    Friend WithEvents picThumb2 As PictureBox
-    Friend WithEvents picThumb3 As PictureBox
+    Friend WithEvents picApartmentMain As CoverPictureBox
+    Friend WithEvents picThumb1 As CoverPictureBox
+    Friend WithEvents picThumb2 As CoverPictureBox
+    Friend WithEvents picThumb3 As CoverPictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtDescription As TextBox
     Friend WithEvents lblHotelValue As Label
+    Friend WithEvents lblApartmentNumberValue As Label
     Friend WithEvents lblLocationValue As Label
     Friend WithEvents lblPriceValue As Label
-    Friend WithEvents lblApartmentNumberValue As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents pnlDescription As RoundedPanel
+    Friend WithEvents txtDescription As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents pnlCheckIn As RoundedPanel
     Friend WithEvents dtpCheckIn As DateTimePicker
     Friend WithEvents Label15 As Label
+    Friend WithEvents pnlNights As RoundedPanel
     Friend WithEvents numNights As NumericUpDown
-    Friend WithEvents btnBook As Button
-    Friend WithEvents btnBack As Button
-    Friend WithEvents lblMessage As Label
+    Friend WithEvents lblRightDivider As Label
+    Friend WithEvents lblTotalLabel As Label
+    Friend WithEvents lblTotalValue As Label
+    Friend WithEvents btnBook As RoundedButton
+    Friend WithEvents btnBack As RoundedButton
 End Class

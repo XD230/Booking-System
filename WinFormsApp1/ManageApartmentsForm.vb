@@ -10,17 +10,105 @@ Public Class ManageApartmentsForm
     Dim image2Path As String = ""
     Dim image3Path As String = ""
 
+    Private pnlInfoIcon As RoundedPanel
+    Private lblInfoGlyph As Label
+    Private WithEvents lblMessage As Label
+
 
     Private Sub ManageApartmentsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        picApartmentMain.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb1.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb2.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb3.SizeMode = PictureBoxSizeMode.StretchImage
+        BuildFooter()
+        ApplyButtonIcons()
 
         LoadApartments()
 
         lblMessage.Text = "Manage apartment listings and images here."
+
+    End Sub
+
+
+    Private Sub BuildFooter()
+
+        lblMessage = New Label() With {
+            .AutoSize = True,
+            .BackColor = Color.Transparent,
+            .Font = New Font("Segoe UI", 11.0F),
+            .ForeColor = Color.FromArgb(60, 70, 90),
+            .Location = New Point(330, 813),
+            .Text = "Manage apartment listings and images here."
+        }
+
+        lblInfoGlyph = New Label() With {
+            .BackColor = Color.Transparent,
+            .Dock = DockStyle.Fill,
+            .Font = New Font("Segoe UI", 12.0F, FontStyle.Bold),
+            .ForeColor = Color.White,
+            .Text = "i",
+            .TextAlign = ContentAlignment.MiddleCenter
+        }
+
+        pnlInfoIcon = New RoundedPanel() With {
+            .BackColor = Color.FromArgb(37, 99, 235),
+            .BorderThickness = 0,
+            .CornerRadius = 0,
+            .Location = New Point(290, 810),
+            .Size = New Size(28, 28)
+        }
+        pnlInfoIcon.Controls.Add(lblInfoGlyph)
+
+        pnlCard.Controls.Add(pnlInfoIcon)
+        pnlCard.Controls.Add(lblMessage)
+
+    End Sub
+
+
+    Private Sub ApplyButtonIcons()
+
+        Dim iconFont As New Font("Segoe MDL2 Assets", 15.0F)
+        Dim blue As Color = Color.FromArgb(37, 99, 235)
+        Dim red As Color = Color.FromArgb(220, 60, 60)
+        Dim slate As Color = Color.FromArgb(60, 70, 90)
+
+        btnAdd.IconFont = iconFont
+        btnAdd.IconGlyph = ChrW(&HE710)
+        btnAdd.IconColor = Color.White
+        btnAdd.IconSpacing = 10
+
+        btnEdit.IconFont = iconFont
+        btnEdit.IconGlyph = ChrW(&HE70F)
+        btnEdit.IconColor = blue
+        btnEdit.IconSpacing = 10
+        btnEdit.BorderColor = blue
+
+        btnDelete.IconFont = iconFont
+        btnDelete.IconGlyph = ChrW(&HE74D)
+        btnDelete.IconColor = blue
+        btnDelete.IconSpacing = 10
+        btnDelete.BorderColor = blue
+
+        btnClear.IconFont = iconFont
+        btnClear.IconGlyph = ChrW(&HE894)
+        btnClear.IconColor = blue
+        btnClear.IconSpacing = 10
+        btnClear.BorderColor = blue
+
+        btnBrowseImage.IconFont = iconFont
+        btnBrowseImage.IconGlyph = ChrW(&HE8B7)
+        btnBrowseImage.IconColor = blue
+        btnBrowseImage.IconSpacing = 12
+        btnBrowseImage.BorderColor = blue
+
+        btnRemoveImage.IconFont = iconFont
+        btnRemoveImage.IconGlyph = ChrW(&HE74D)
+        btnRemoveImage.IconColor = red
+        btnRemoveImage.IconSpacing = 12
+        btnRemoveImage.BorderColor = red
+
+        btnBack.IconFont = iconFont
+        btnBack.IconGlyph = ChrW(&HE72B)
+        btnBack.IconColor = slate
+        btnBack.IconSpacing = 12
+        btnBack.BorderColor = Color.FromArgb(190, 200, 215)
 
     End Sub
 
@@ -42,7 +130,15 @@ Public Class ManageApartmentsForm
 
             Dim query As String
 
-            query = "SELECT ApartmentID, HotelName, ApartmentNumber, Location, Price, Description, MainImagePath FROM Apartments"
+            query = "SELECT " &
+                    "ApartmentID AS [ID], " &
+                    "HotelName AS [Hotel Name], " &
+                    "ApartmentNumber AS [Apartment Name], " &
+                    "Location AS [Location], " &
+                    "Price AS [Price], " &
+                    "Description AS [Description], " &
+                    "MainImagePath " &
+                    "FROM Apartments"
 
             Using cmd As New SqlCommand(query, con)
 
@@ -57,15 +153,6 @@ Public Class ManageApartmentsForm
             End Using
 
         End Using
-
-        dgvApartments.ReadOnly = True
-        dgvApartments.AllowUserToAddRows = False
-        dgvApartments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvApartments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
-        If dgvApartments.Columns.Contains("ApartmentID") Then
-            dgvApartments.Columns("ApartmentID").Visible = False
-        End If
 
         If dgvApartments.Columns.Contains("MainImagePath") Then
             dgvApartments.Columns("MainImagePath").Visible = False
@@ -238,10 +325,10 @@ Public Class ManageApartmentsForm
 
             row = dgvApartments.Rows(e.RowIndex)
 
-            selectedApartmentID = Convert.ToInt32(row.Cells("ApartmentID").Value)
+            selectedApartmentID = Convert.ToInt32(row.Cells("ID").Value)
 
-            txtHotelName.Text = row.Cells("HotelName").Value.ToString()
-            txtApartmentNumber.Text = row.Cells("ApartmentNumber").Value.ToString()
+            txtHotelName.Text = row.Cells("Hotel Name").Value.ToString()
+            txtApartmentNumber.Text = row.Cells("Apartment Name").Value.ToString()
             txtLocation.Text = row.Cells("Location").Value.ToString()
             txtPrice.Text = row.Cells("Price").Value.ToString()
             txtDescription.Text = row.Cells("Description").Value.ToString()

@@ -1,4 +1,4 @@
-﻿Imports Microsoft.Data.SqlClient
+Imports Microsoft.Data.SqlClient
 Imports System.Configuration
 
 Public Class BrowseApartmentsForm
@@ -8,28 +8,103 @@ Public Class BrowseApartmentsForm
     Dim selectedApartmentID As Integer = 0
     Dim selectedPrice As Decimal = 0
 
+    Private pnlFooter As RoundedPanel
+    Private pnlInfoIcon As RoundedPanel
+    Private lblInfoGlyph As Label
+    Private WithEvents lblMessage As Label
+
 
     Private Sub BrowseApartmentsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        picApartmentMain.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb1.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb2.SizeMode = PictureBoxSizeMode.StretchImage
-        picThumb3.SizeMode = PictureBoxSizeMode.StretchImage
+        BuildFooter()
+        ApplyButtonIcons()
 
         dtpCheckIn.MinDate = Date.Today
+        dtpCheckIn.Value = Date.Today
 
         numNights.Minimum = 1
         numNights.Maximum = 30
         numNights.Value = 1
-
-        txtDescription.ReadOnly = True
-        txtDescription.Multiline = True
 
         ClearDetails()
 
         LoadApartments("")
 
         lblMessage.Text = "Select an apartment to view details."
+
+    End Sub
+
+
+    Private Sub BuildFooter()
+
+        lblInfoGlyph = New Label() With {
+            .BackColor = Color.Transparent,
+            .Dock = DockStyle.Fill,
+            .Font = New Font("Segoe UI", 12.0F, FontStyle.Bold),
+            .ForeColor = Color.White,
+            .Text = "i",
+            .TextAlign = ContentAlignment.MiddleCenter
+        }
+
+        pnlInfoIcon = New RoundedPanel() With {
+            .BackColor = Color.FromArgb(37, 99, 235),
+            .BorderThickness = 0,
+            .CornerRadius = 0,
+            .Location = New Point(20, 16),
+            .Size = New Size(28, 28)
+        }
+        pnlInfoIcon.Controls.Add(lblInfoGlyph)
+
+        lblMessage = New Label() With {
+            .AutoSize = True,
+            .BackColor = Color.Transparent,
+            .Font = New Font("Segoe UI", 11.0F),
+            .ForeColor = Color.FromArgb(60, 70, 90),
+            .Location = New Point(60, 20),
+            .Text = "Select an apartment to view details."
+        }
+
+        pnlFooter = New RoundedPanel() With {
+            .BackColor = Color.FromArgb(245, 248, 254),
+            .BorderColor = Color.FromArgb(220, 228, 240),
+            .BorderThickness = 1,
+            .CornerRadius = 0,
+            .Location = New Point(40, 980),
+            .Size = New Size(1300, 60)
+        }
+        pnlFooter.Controls.Add(pnlInfoIcon)
+        pnlFooter.Controls.Add(lblMessage)
+
+        pnlCard.Controls.Add(pnlFooter)
+
+    End Sub
+
+
+    Private Sub ApplyButtonIcons()
+
+        Dim iconFont As New Font("Segoe MDL2 Assets", 16.0F)
+        Dim blue As Color = Color.FromArgb(37, 99, 235)
+        Dim slate As Color = Color.FromArgb(60, 70, 90)
+
+        btnSearch.IconFont = iconFont
+        btnSearch.IconGlyph = ChrW(&HE721)
+        btnSearch.IconColor = Color.White
+        btnSearch.IconSpacing = 12
+
+        btnClearSearch.IconFont = iconFont
+        btnClearSearch.IconGlyph = ChrW(&HE894)
+        btnClearSearch.IconColor = slate
+        btnClearSearch.IconSpacing = 12
+
+        btnBook.IconFont = iconFont
+        btnBook.IconGlyph = ChrW(&HE787)
+        btnBook.IconColor = Color.White
+        btnBook.IconSpacing = 14
+
+        btnBack.IconFont = iconFont
+        btnBack.IconGlyph = ChrW(&HE72B)
+        btnBack.IconColor = slate
+        btnBack.IconSpacing = 14
 
     End Sub
 
@@ -51,7 +126,14 @@ Public Class BrowseApartmentsForm
 
             Dim query As String
 
-            query = "SELECT ApartmentID, HotelName, ApartmentNumber, Location, Price, Description, MainImagePath " &
+            query = "SELECT " &
+                    "ApartmentID, " &
+                    "HotelName AS [Hotel Name], " &
+                    "ApartmentNumber AS [Apartment Number], " &
+                    "Location AS [Location], " &
+                    "Price AS [Price per Night], " &
+                    "Description, " &
+                    "MainImagePath " &
                     "FROM Apartments " &
                     "WHERE HotelName LIKE @Search OR Location LIKE @Search"
 
@@ -69,11 +151,6 @@ Public Class BrowseApartmentsForm
             End Using
 
         End Using
-
-        dgvApartments.ReadOnly = True
-        dgvApartments.AllowUserToAddRows = False
-        dgvApartments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvApartments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
         If dgvApartments.Columns.Contains("ApartmentID") Then
             dgvApartments.Columns("ApartmentID").Visible = False
@@ -99,12 +176,12 @@ Public Class BrowseApartmentsForm
             row = dgvApartments.Rows(e.RowIndex)
 
             selectedApartmentID = Convert.ToInt32(row.Cells("ApartmentID").Value)
-            selectedPrice = Convert.ToDecimal(row.Cells("Price").Value)
+            selectedPrice = Convert.ToDecimal(row.Cells("Price per Night").Value)
 
-            lblHotelValue.Text = row.Cells("HotelName").Value.ToString()
-            lblApartmentNumberValue.Text = row.Cells("ApartmentNumber").Value.ToString()
+            lblHotelValue.Text = row.Cells("Hotel Name").Value.ToString()
+            lblApartmentNumberValue.Text = row.Cells("Apartment Number").Value.ToString()
             lblLocationValue.Text = row.Cells("Location").Value.ToString()
-            lblPriceValue.Text = row.Cells("Price").Value.ToString()
+            lblPriceValue.Text = row.Cells("Price per Night").Value.ToString()
             txtDescription.Text = row.Cells("Description").Value.ToString()
 
             Dim mainImagePath As String
@@ -122,6 +199,8 @@ Public Class BrowseApartmentsForm
             End If
 
             LoadApartmentImages(selectedApartmentID)
+
+            UpdateTotalPrice()
 
             lblMessage.Text = "Apartment selected."
 
@@ -181,6 +260,23 @@ Public Class BrowseApartmentsForm
             End Using
 
         End Using
+
+    End Sub
+
+
+    Private Sub UpdateTotalPrice()
+
+        Dim nights As Integer = Convert.ToInt32(numNights.Value)
+        Dim total As Decimal = selectedPrice * nights
+
+        lblTotalValue.Text = total.ToString("0.00")
+
+    End Sub
+
+
+    Private Sub numNights_ValueChanged(sender As Object, e As EventArgs) Handles numNights.ValueChanged
+
+        UpdateTotalPrice()
 
     End Sub
 
@@ -293,6 +389,8 @@ Public Class BrowseApartmentsForm
 
         numNights.Value = 1
         dtpCheckIn.Value = Date.Today
+
+        lblTotalValue.Text = "0.00"
 
     End Sub
 

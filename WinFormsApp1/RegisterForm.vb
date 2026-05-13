@@ -27,8 +27,8 @@ Public Class RegisterForm
         Dim confirmPassword As String
         Dim role As String
 
-        fullName = txtUsername.Text.Trim()
-        username = txtFullName.Text.Trim()
+        fullName = txtFullName.Text.Trim()
+        username = txtUsername.Text.Trim()
         password = txtPassword.Text.Trim()
         confirmPassword = txtConfirmPassword.Text.Trim()
         role = cmbRole.Text.Trim()
